@@ -1,0 +1,479 @@
+-- CREATING DATABASE
+
+use zenclass
+switched to db zenclass
+
+-- CREATING COLLECTION
+db.createCollection("users")
+
+-- INSERTING MANY DOCUMENTS
+db.users.insertMany([
+  {  "name": "John Doe", "email": "john@example.com", "role": "student" },
+  {  "name": "Jane Smith", "email": "jane@example.com", "role": "student" },
+  {  "name": "Michael Brown", "email": "michael@example.com", "role": "student" },
+  {  "name": "Emily Davis", "email": "emily@example.com", "role": "student" },
+  { "name": "Daniel Taylor", "email": "daniel@example.com", "role": "student" },
+  {  "name": "Jessica Wilson", "email": "jessica@example.com", "role": "student" },
+  {  "name": "Chris Moore", "email": "chris@example.com", "role": "student" },
+  { "name": "Sophia White", "email": "sophia@example.com", "role": "student" },
+  {  "name": "Sarah Miller", "email": "sarah@example.com", "role": "student" },
+  {  "name": "Oliver Clark", "email": "oliver@example.com", "role": "student" },
+  {  "name": "David Turner", "email": "david@example.com", "role": "mentor", "mentee_count": 18 },
+  {  "name": "Rachel Harris", "email": "rachel@example.com", "role": "mentor", "mentee_count": 22 },
+  {  "name": "Amanda King", "email": "amanda@example.com", "role": "mentor", "mentee_count": 12 }
+])
+
+
+-- CODEKATA COLLECTION
+db.createCollection("codekata")
+
+db.codekata.insertMany([
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "problems_solved": 20 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "problems_solved": 35 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "problems_solved": 18 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ca"), "problems_solved": 25 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "problems_solved": 40 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "problems_solved": 19 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "problems_solved": 30 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "problems_solved": 34 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "problems_solved": 26 },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "problems_solved": 29 },
+])
+
+
+
+-- ATTENDANCE COLLECTION
+db.createCollection("attendance")
+
+
+
+db.attendance.insertMany([
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c7"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "date": ISODate("2020-10-18"), "status": "absent" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c8"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702c9"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "date": ISODate("2020-10-17"), "status": "absent" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cb"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "date": ISODate("2020-10-16"), "status": "absent" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cc"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cd"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "date": ISODate("2020-10-19"), "status": "absent" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702ce"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "date": ISODate("2020-10-18"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702cf"), "date": ISODate("2020-10-20"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "date": ISODate("2020-10-16"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "date": ISODate("2020-10-17"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "date": ISODate("2020-10-18"), "status": "absent" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "date": ISODate("2020-10-19"), "status": "present" },
+  {  "user_id": ObjectId("670cfa38f08acfc6198702d0"), "date": ISODate("2020-10-20"), "status": "present" },
+])
+
+
+
+-- TOPICS COLLECTION
+
+db.createCollection("topics")
+
+db.topics.insertMany([
+  {  "topic_name": "JavaScript Basics", "date_taught": ISODate("2024-10-01") },
+  {  "topic_name": "React Introduction", "date_taught": ISODate("2024-10-03") },
+  {  "topic_name": "Node.js Fundamentals", "date_taught": ISODate("2024-10-05") },
+  {  "topic_name": "MongoDB CRUD Operations", "date_taught": ISODate("2024-10-07")},
+  {  "topic_name": "React Hooks", "date_taught": ISODate("2024-10-08")},
+  {  "topic_name": "React Routers", "date_taught": ISODate("2024-10-09")},
+  {  "topic_name": "HTTP methods in React", "date_taught": ISODate("2024-10-10")},
+  {  "topic_name": "MYSQL", "date_taught": ISODate("2024-10-11")},
+]
+
+)
+
+
+-- TASKS COLLECTION
+db.createCollection("tasks")
+
+db.tasks.insertMany([
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702c7"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702c7"), 
+    "status": "not submitted",
+    "due_date": ISODate("2020-10-22")
+  },
+  {
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702c8"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702c8"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-17"),
+    "due_date": ISODate("2020-10-22")
+  },
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702c9"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702c9"), 
+    "status": "not submitted",
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702ca"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702ca"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-18"),
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702cb"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702cb"), 
+    "status": "not submitted",
+    "due_date": ISODate("2020-10-22")
+  },
+
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702cc"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702cc"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-18"),
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702cd"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702cd"), 
+    "status": "not submitted",
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702ce"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702ce"), 
+    "status": "not submitted",
+    "submission_date": ISODate("2020-10-18"),
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702cf"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702cf"), 
+    "status": "not submitted",
+    "due_date": ISODate("2020-10-22")
+  },
+
+{
+    "task_name": "JavaScript Fundamentals Task",
+    "user_id": ObjectId("670cfa38f08acfc6198702d0"), 
+    "status": "submitted",
+    "submission_date": ISODate("2020-10-16"),
+    "due_date": ISODate("2020-10-15")
+  },
+  {
+    "task_name": "React App Project",
+    "user_id": ObjectId("670cfa38f08acfc6198702d0"), 
+    "status": "not submitted",
+    "submission_date": ISODate("2020-10-18"),
+    "due_date": ISODate("2020-10-22")
+  },
+])
+
+
+-- COMPANY_DRIVES COLLECTION
+db.createCollection("company_drives")
+
+
+db.company_drives.insertMany([
+  {
+  
+    "company_name": "Accenture",
+    "drive_date": ISODate("2020-10-20"),
+    "appeared_students": [
+      ObjectId("670cfa38f08acfc6198702ca"), 
+      ObjectId("670cfa38f08acfc6198702c8"),
+      ObjectId("670cfa38f08acfc6198702ce")  
+    ]
+  },
+  {
+    
+    "company_name": "HCL",
+    "drive_date": ISODate("2020-10-25"),
+    "appeared_students": [
+      ObjectId("670cfa38f08acfc6198702c7"), 
+      ObjectId("670cfa38f08acfc6198702c9")  
+    ]
+  },
+  {
+    
+    "company_name": "Amazon",
+    "drive_date": ISODate("2020-10-30"),
+    "appeared_students": [
+      ObjectId("670cfa38f08acfc6198702cb"), 
+      ObjectId("670cfa38f08acfc6198702cf") 
+    ]
+  }
+])
+
+
+-- MENTORS COLLECTION
+db.createCollection("mentors")
+
+
+db.mentors.insertMany([
+  {
+    "name": "David Turner",
+    "email": "david@example.com",
+    "role": "mentor",
+    "mentee_count": 20
+  },
+  {
+    "name": "Rachel Harris",
+    "email": "rachel@example.com",
+    "role": "mentor",
+    "mentee_count": 18
+  },
+  {
+    "name": "Amanda King",
+    "email": "amanda@example.com",
+    "role": "mentor",
+    "mentee_count": 10
+  },
+  {
+    "name": "Jessy pink",
+    "email": "jessy@example.com",
+    "role": "mentor",
+    "mentee_count": 12
+  },
+  {
+    "name": "Sathya dev",
+    "email": "sathyad@example.com",
+    "role": "mentor",
+    "mentee_count": 14
+  },
+  {
+    "name": "John Durai",
+    "email": "jd@example.com",
+    "role": "mentor",
+    "mentee_count": 16
+  }
+])
+
+
+
+-- Find all the topics and tasks which are thought in the month of October
+
+db.topics.find({
+  date_taught: {
+    $gte: ISODate("2024-10-01T00:00:00Z"),
+    $lt: ISODate("2024-11-01T00:00:00Z")
+  }
+});
+
+db.tasks.aggregate([
+  {
+    $match: { $or: [ { "due_date": { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } }] }
+  },
+  {$group: {_id: "$task_name"}
+  }
+])
+
+
+-- Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+db.company_drives.find({
+  drive_date: {
+    $gte: ISODate("2020-10-15T00:00:00Z"),
+    $lt: ISODate("2020-11-01T00:00:00Z")
+  }
+});
+
+
+
+-- Find all the company drives and students who are appeared for the placement.
+
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",               
+      localField: "appeared_students", 
+      foreignField: "_id",            
+      as: "students_info"             
+    }
+  },
+  {
+    $project: {
+      "company_name": 1,
+      "drive_date": 1,
+      "students_info.name": 1,
+      "students_info.email": 1,
+      _id:0
+    }
+  }
+])
+
+
+-- Find the number of problems solved by the user in codekata
+-- We can replace value of "name" in "$match" operator to retrieve info about other users
+
+db.users.aggregate([
+  {
+    $match: { "name": "Emily Davis" } 
+  },
+  {
+    $lookup: {
+      from: "codekata",           
+      localField: "_id",         
+      foreignField: "user_id",    
+      as: "codekata_info"        
+    }
+  },
+  {
+    $project: {
+      "name": 1,
+      "codekata_info.problems_solved": 1,
+      "_id": 0
+    }
+  }
+])
+
+
+
+-- Find all the mentors with who has the mentees count more than 15
+
+
+db.mentors.find({ "mentee_count": { $gt: 15 } })
+
+
+-- Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+
+db.attendance.aggregate([
+  {
+    
+    $match: {
+      status: "absent",
+      date: {
+        $gte: ISODate("2020-10-15"),
+        $lte: ISODate("2020-10-31")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "user_id",
+      foreignField: "user_id",
+      as: "tasks_info"
+    }
+  },
+  {
+ 
+    $unwind: "$tasks_info"
+  },
+  {
+    $match: {
+      "tasks_info.status": "not submitted",
+      "tasks_info.due_date": {
+        $gte: ISODate("2020-10-15"),
+        $lte: ISODate("2020-10-31")
+      }
+    }
+  },
+  {
+    
+    $group: {
+      _id: "$user_id"
+    }
+  },
+  {
+  
+    $count: "absent_and_not_submitted"
+  }
+])
+
